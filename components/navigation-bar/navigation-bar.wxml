@@ -1,0 +1,7 @@
+<view class="nav" style="opacity:{{opacity}};padding-top:{{statusBarHeight}}px;">
+  <view class="nav-inner" style="height:{{navHeight}}px;">
+    <view class="nav-back" wx:if="{{showBack}}" bindtap="goBack">‹</view>
+    <view class="nav-title">{{title}}</view>
+  </view>
+</view>
+<view class="nav-holder" style="height:{{statusBarHeight + navHeight}}px;"></view>

@@ -1,0 +1,44 @@
+<nav-bar title="出席回执" showBack="{{true}}" />
+
+<view class="form-container">
+  <view class="title">出席回执</view>
+  <view class="subtitle">请填写您的出席信息，方便学院统计</view>
+
+  <form bindsubmit="submitRsvp">
+    <view class="input-group">
+      <view class="label">姓名</view>
+      <input class="input" placeholder="请输入姓名" data-field="name" bindinput="onInput" value="{{formData.name}}" />
+    </view>
+
+    <view class="input-group">
+      <view class="label">身份</view>
+      <picker mode="selector" range="{{roleOptions}}" value="{{roleIndex}}" bindchange="onRoleChange">
+        <view class="input picker">{{roleOptions[roleIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <view class="label">是否出席</view>
+      <picker mode="selector" range="{{attendOptions}}" value="{{attendIndex}}" bindchange="onAttendChange">
+        <view class="input picker">{{attendOptions[attendIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <view class="label">同行人数</view>
+      <picker mode="selector" range="{{guestOptions}}" value="{{guestIndex}}" bindchange="onGuestChange">
+        <view class="input picker">{{guestOptions[guestIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <view class="label">备注</view>
+      <input class="input" placeholder="如有特殊需求请填写" data-field="note" bindinput="onInput" value="{{formData.note}}" />
+    </view>
+
+    <view class="bottom-bar">
+      <button class="btn-cancel" bindtap="goHome">取消</button>
+      <button class="btn-confirm" form-type="submit" disabled="{{submitting}}">{{submitting ? '提交中...' : '确定'}}</button>
+    </view>
+  </form>
+</view>

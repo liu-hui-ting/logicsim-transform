@@ -1,0 +1,13 @@
+<nav-bar title="电子邀请函" showBack="{{true}}" />
+
+<view class="invite-page">
+  <view class="card">
+    <view class="card-title">人工智能学院</view>
+    <view class="card-sub">2027届毕业典礼邀请函</view>
+    <view class="card-line"></view>
+    <view class="card-text">{{inviteText}}</view>
+    <view class="card-info">时间：2027年6月20日 09:00</view>
+    <view class="card-info">地点：人工智能学院大礼堂</view>
+    <view class="card-btn" bindtap="goRsvp">填写出席回执</view>
+  </view>
+</view>

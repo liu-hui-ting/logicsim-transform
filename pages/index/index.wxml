@@ -1,0 +1,82 @@
+<nav-bar title="人工智能学院毕业典礼" opacity="{{navOpacity}}" />
+
+<!-- 信封封面 -->
+<view class="envelope {{opened ? 'opened' : ''}}" bindtap="openEnvelope">
+  <view class="envelope-flap"></view>
+  <view class="envelope-body">
+    <view class="envelope-seal">点击开启邀请函</view>
+  </view>
+</view>
+
+<view class="page">
+  <!-- 唱片音乐 -->
+  <view class="record-wrap" bindtap="toggleMusic">
+    <view class="record {{musicPlaying ? '' : 'pause'}}">
+      <view class="record-hole"></view>
+    </view>
+    <view class="needle {{musicPlaying ? 'needle-on' : ''}}"></view>
+  </view>
+
+  <view class="title">诚 挚 邀 请</view>
+  <view class="sub">人工智能学院 2027 届毕业典礼</view>
+  <view class="time">2027年6月20日 09:00 · 大礼堂</view>
+
+  <!-- 身份选择 -->
+  <view class="role-box">
+    <view class="role-title">请选择您的身份</view>
+    <view class="role-list">
+      <view
+        class="role-item {{role === item ? 'active' : ''}}"
+        wx:for="{{roleOptions}}"
+        wx:key="index"
+        data-role="{{item}}"
+        bindtap="chooseRole"
+      >{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 身份对应邀请语 -->
+  <view class="invite-card" wx:if="{{inviteText}}">
+    <view class="invite-label">致{{role}}</view>
+    <view class="invite-text">{{inviteText}}</view>
+  </view>
+
+  <!-- 倒计时 -->
+  <view class="countdown">
+    <view class="cd-item">{{countdown.days}}<text>天</text></view>
+    <view class="cd-item">{{countdown.hours}}<text>时</text></view>
+    <view class="cd-item">{{countdown.minutes}}<text>分</text></view>
+    <view class="cd-item">{{countdown.seconds}}<text>秒</text></view>
+  </view>
+
+  <view class="btn-main" bindtap="goRsvp">填写出席回执</view>
+  <view class="btn-ghost" bindtap="goSchedule">查看典礼流程</view>
+
+  <view class="arrow-wrap" bindtap="scrollDown">
+    <view class="arrow"></view>
+    <view class="arrow-text">向下滑动查看更多</view>
+  </view>
+</view>
+
+<!-- 相册 -->
+<view class="section">
+  <view class="section-title">精彩瞬间</view>
+  <swiper class="swiper" indicator-dots autoplay circular>
+    <swiper-item wx:for="{{photos}}" wx:key="index">
+      <image class="photo" src="{{item}}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 联系方式 -->
+<view class="section">
+  <view class="section-title">联系我们</view>
+  <view class="contact-row" bindtap="openMap">
+    <text class="text">📍 {{location.name}}（点击导航）</text>
+  </view>
+  <view class="contact-row" bindtap="callPhone">
+    <text class="text">📞 {{phone}}（点击拨打）</text>
+  </view>
+</view>
+
+<view class="footer">人工智能学院 · 2027届毕业典礼组委会</view>

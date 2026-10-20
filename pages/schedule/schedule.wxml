@@ -1,0 +1,13 @@
+<nav-bar title="典礼流程" showBack="{{true}}" />
+
+<view class="schedule-page">
+  <view class="tip">请提前30分钟到场签到，凭学生证或身份证入场</view>
+  <view class="item" wx:for="{{schedule}}" wx:key="index">
+    <view class="dot"></view>
+    <view class="content">
+      <view class="time">{{item.time}}</view>
+      <view class="text">{{item.text}}</view>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>

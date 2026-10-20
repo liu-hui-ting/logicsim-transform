@@ -1,0 +1,22 @@
+.invite-page { padding: 40rpx; }
+.card {
+  background: linear-gradient(180deg, #12275a, #0b1b3a);
+  border: 1rpx solid rgba(216,201,163,.3);
+  border-radius: 24rpx;
+  padding: 50rpx 40rpx;
+}
+.card-title { text-align: center; font-size: 42rpx; color: #d8c9a3; letter-spacing: 6rpx; }
+.card-sub { text-align: center; font-size: 30rpx; margin-top: 16rpx; color: #fff; }
+.card-line { width: 120rpx; height: 2rpx; background: #d8c9a3; margin: 30rpx auto; }
+.card-text { font-size: 28rpx; line-height: 1.9; color: #e0d8c0; }
+.card-info { font-size: 26rpx; color: #9fb0d0; margin-top: 16rpx; }
+.card-btn {
+  margin-top: 40rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  border-radius: 42rpx;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  color: #fff;
+  font-size: 30rpx;
+}
